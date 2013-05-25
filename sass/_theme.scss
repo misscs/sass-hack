@@ -1,0 +1,42 @@
+// Theme Settings
+// @TODO
+// a. Figure out why can't use vars to pass in a list of colors
+
+$purewhite: rgba(255, 255, 255, 1);
+$pureblack: rgba(0, 0, 0, 1);
+$black: $pureblack;
+$white: $purewhite;
+
+$grey: #808080;
+$yellow: #e1b724;
+$blue: #007bb1;
+
+$accent: $yellow;
+
+// Base Theme Defaults
+$default-border-color: $grey;
+// $default-link-colors: $blue, $yellow, $blue, $blue, $blue;
+
+
+// Explore Collections Theme Settings
+
+$explore-bg: $black;
+// $browse-collections-links: $white, $yellow, $white, $white, $white;
+$browse-collections-active-link: $yellow;
+$search-collections-input-bg: $black;
+$search-collections-color: $yellow;
+
+// Ajax Loader
+$loader-container-bg: $explore-bg;
+$loader-color: $yellow;
+
+// Extends
+%container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%active-link {
+  color: $browse-collections-active-link;
+}

@@ -1,0 +1,9 @@
+// Layout
+
+// Header Section
+.logo {
+  @include float-span(5);
+  @include sprite-sprite(logo);
+  padding-left: 25px;
+  border-right: 2px solid $default-border-color;
+}

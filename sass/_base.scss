@@ -1,0 +1,11 @@
+// Base
+
+// SMACSS
+@import "config";
+@import "states";
+@import "theme";
+
+a {
+  @include link-colors($blue, $yellow, $blue, $blue, $blue);
+  text-decoration: none;
+}

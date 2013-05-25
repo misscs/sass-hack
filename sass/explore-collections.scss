@@ -1,0 +1,134 @@
+/*
+  * DO NOT EDIT THE CSS FILE.
+  * Edit SCSS file in /sass
+  * You can write plain old css in the SCSS file :)
+*/
+
+// @imports
+@import "base";
+
+// General Styles for Explore Collections
+.footer-wrapper {
+  background: $explore-bg;
+  height: 42px;
+  color: $white;
+
+}
+
+.region-footer {
+  @extend %container;
+  & .block {
+    margin-bottom: 0;
+    display: none; // hide all blocks
+  }
+}
+
+// Explore Collections Show/Toggle
+.explore-collections {
+  @include float-span(5, "last");
+  display: block !important; // should always be visible
+  padding-top: 12px;
+}
+
+.is-dialog-hidden .cb-trigger {
+ @include sprite-sprite(collections-hidden);
+}
+
+.is-dialog-open .cb-trigger {
+  @include sprite-sprite(collections-open);
+}
+
+////////////////////
+// Browse Filters //
+////////////////////
+
+// BLOCK class
+.browse-collections {
+  @include grid-span(6);
+  line-height: 1em;
+  padding-top: 22px;
+  margin-right: column-span(1, 6);
+  .block-title {
+    text-transform: uppercase;
+    font-size: 12px;
+    float: left;
+  }
+}
+
+// UL
+.browse-by-links {
+    float: left;
+    @include inline-block-list(5px);
+    li {
+      border-right: 1px solid $accent;
+      &:first-child {
+        border-left: 1px solid $accent;
+        margin-left: 10px;
+      }
+    }
+    a {
+      @include link-colors($white, $yellow, $white, $white, $white);
+      text-transform: lowercase;
+    }
+  }
+
+// Active states
+@each $filter in type, location, time-period, tags, featured {
+  .page-browse-#{$filter} .browse-#{$filter} {
+    @extend %active-link;
+  }
+}
+
+// Search Collections
+// Local vars
+$p: 18px;
+.search-collections {
+  @include grid-span(3.5);
+  margin-right: column-span(1, 9);
+  padding-top: $p;
+  position: relative;
+  input[type="submit"] {
+    @include sprite-sprite(search);
+    border: none;
+    position: absolute;
+    top: $p;
+    left: -$p/3; // @hack breather room for search input
+  }
+  input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: $accent;
+    background: $search-collections-input-bg;
+    width: grid-span(3, 8, 3.5);
+    float: right;
+    color: $search-collections-color;
+  }
+}
+
+// Explore Collections on the browse pages or if overlay initted
+.section-browse,
+.cb-overlay-content {
+  #main {
+    border: 1px solid $default-border-color;
+  }
+  .footer-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    @include box-shadow;
+    & .block {
+      display: block !important; // show all blocks in overlay
+    }
+  }
+}
+
+// Header and Nav sit over the overlay
+.is-dialog-open {
+  #header,
+  #navigation {
+    position: relative;
+    z-index: 1010;
+  }
+}

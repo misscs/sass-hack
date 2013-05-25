@@ -1,0 +1,93 @@
+/*
+  * DO NOT EDIT THE CSS FILE.
+  * Edit SCSS file in /sass
+  * You can write plain old css in the SCSS file :)
+*/
+
+// @imports
+@import "base";
+
+//////////////////
+// View Filters
+// Wraps all filters
+//////////////////
+.view-filters  {
+  .form_label {
+    font-size:0.75em;
+    @include grid-span(2, 1)
+  }
+}
+
+/////////////////////////////
+// Views Exposed Form
+// Wraps exposed form selects
+// Child of .view-filters
+/////////////////////////////
+.views-exposed-form {
+
+  // class wrapping each select
+  .views-exposed-widget {
+    label {
+      @include squish-text;
+    }
+  }
+  .form-item {
+    display: block;
+    overflow: hidden;
+  }
+  // hide the submit
+  .views-submit-button {
+    display: none;
+  }
+}
+
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 1.6em;
+}
+
+.views-exposed-form .form-item,
+.views-exposed-form .form-submit {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.views-exposed-form label {
+  font-weight: bold;
+}
+
+.views-exposed-widgets {
+  margin-bottom: .5em;
+}
+
+// Set widths for .views-exposed-widget explicityly by type
+#edit-time-period-wrapper {
+  @include grid-span(3, 3);
+}
+
+#edit-type-wrapper {
+   @include grid-span(7, 6);
+}
+
+#edit-locations-wrapper {
+   @include grid-span(4, 13);
+}
+
+/* table style column align */
+.views-align-left {
+  text-align: left;
+}
+.views-align-right {
+  text-align: right;
+}
+.views-align-center {
+  text-align: center;
+}
+
+/* Remove the border on tbody that system puts in */
+.views-view-grid tbody {
+  border-top: none;
+}
+
+.view .progress-disabled {
+  float: none;
+}

@@ -1,0 +1,55 @@
+///////////////////////////////////
+// Import all Extensions Here // //
+///////////////////////////////////
+
+@import "compass";
+@import "compass/support";
+@import "singularitygs";
+@import "modular-scale";
+
+
+///////////////////
+// Modular Scale //
+///////////////////
+$xxs: ms(-0.75);
+$xs: ms(-0.5); // 13px
+$s: ms(-0.25); // 14px
+$m: ms(0);
+$l: ms(0.25);
+$xl: ms(0.5);
+
+
+/////////////////
+// Singularity //
+/////////////////
+$grids: 16;
+$gutters: 1/4;
+$output-style: 'float';
+$include-clearfix: true;
+
+///////////////////////
+// Compass Variables //
+///////////////////////
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: false;
+
+/////////////////////
+// Compass Sprites //
+/////////////////////
+//
+$sprite-sprite-dimensions: true;
+$sprite-collections-hidden-spacing: 10px;
+$sprite-collections-open-spacing: 10px;
+
+@import "sprite/*.png";
+
+
+
+// Assume most sprites are text image replacements and <a> tags
+// Apply mixin to hide text globally and always display block
+.sprite-sprite {
+  @include squish-text;
+  display: block;
+}
+
