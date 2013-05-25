@@ -18,14 +18,26 @@ $m: ms(0);
 $l: ms(0.25);
 $xl: ms(0.5);
 
+///////////////////
+// Color Schemer //
+///////////////////
+
+
 
 /////////////////
 // Singularity //
 /////////////////
-$grids: 16;
-$gutters: 1/4;
+$bp-m: 600px;
+$bp-l: 800px;
+
+$grids: 4;
+$grids: add-grid(8 at $bp-m);
+$grids: add-grid(12 at $bp-l);
+
+$gutters: 1/3;
 $output-style: 'float';
 $include-clearfix: true;
+
 
 ///////////////////////
 // Compass Variables //
@@ -34,22 +46,5 @@ $legacy-support-for-ie6: false;
 $legacy-support-for-ie7: false;
 $legacy-support-for-ie8: false;
 
-/////////////////////
-// Compass Sprites //
-/////////////////////
-//
-$sprite-sprite-dimensions: true;
-$sprite-collections-hidden-spacing: 10px;
-$sprite-collections-open-spacing: 10px;
 
-@import "sprite/*.png";
-
-
-
-// Assume most sprites are text image replacements and <a> tags
-// Apply mixin to hide text globally and always display block
-.sprite-sprite {
-  @include squish-text;
-  display: block;
-}
 

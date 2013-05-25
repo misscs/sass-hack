@@ -1,9 +1,32 @@
 // Layout
 
-// Header Section
-.logo {
-  @include float-span(5);
-  @include sprite-sprite(logo);
-  padding-left: 25px;
-  border-right: 2px solid $default-border-color;
+body {
+  @include background-grid;
+}
+
+
+.main-menu {
+  @include horizontal-list(10px);
+  @include background(linear-gradient(#006bb5 50%, #fff));
+  @include padding-leader();
+  @include padding-trailer();
+  a {
+    @include link-colors(#fff, yellow, yellow, yellow);
+  }
+
+}
+
+.main-content {
+  background: rgba(#aaa, 0.5);
+  @include breakpoint($bp-l) {
+    @include float-span(8);
+  }
+}
+
+.aside-content {
+  background: rgba(blue, 0.5);
+  @include breakpoint($bp-l) {
+    @include float-span(4, "last");
+  }
+
 }
